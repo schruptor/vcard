@@ -21,6 +21,7 @@ class End extends Data implements PropertieContract
     {
         $date = $this->date ?: date('Y-m-d');
         $time = $this->time ?: date('H:i:s');
+
         return 'REV:'.$date.'T'.$time.'Z'.PHP_EOL.
             'END:VCARD';
     }

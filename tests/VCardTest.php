@@ -87,7 +87,7 @@ it('a complete vcard can be generated', function () {
         ]))
         ->add(createAddressProperty())
         ->add(createNoteProperty())
-        ->forceEnd('2016-06-26', '16:02:00');;
+        ->forceEnd('2016-06-26', '16:02:00');
 
     expect($vcard->serialize())
         ->toBeString()
@@ -139,5 +139,5 @@ it('a complete vcard can be downloaded', function () {
         ->forceEnd('2016-06-26', '16:02:00');
 
     expect(trim($vcard->response()->content()))
-    ->toBe(completeVCard());
+        ->toBe(completeVCard());
 })->group('now');

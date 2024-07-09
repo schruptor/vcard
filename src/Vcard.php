@@ -4,6 +4,7 @@ namespace Schruptor\Vcard;
 
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Response as ResponseFacade;
 use Ramsey\Uuid\Uuid;
 use Schruptor\Vcard\Properties\Base\Begin;
 use Schruptor\Vcard\Properties\Base\End;
@@ -15,7 +16,6 @@ use Schruptor\Vcard\Properties\JobTitle;
 use Schruptor\Vcard\Properties\Name;
 use Schruptor\Vcard\Properties\Note;
 use Schruptor\Vcard\Properties\Source;
-use Illuminate\Support\Facades\Response as ResponseFacade;
 
 class Vcard
 {
@@ -23,8 +23,7 @@ class Vcard
 
     public function __construct(
         private bool $endIsSet = false
-    )
-    {
+    ) {
         $this->properties = new Collection();
         $this->properties->add(new Begin());
     }
@@ -108,8 +107,7 @@ class Vcard
 
     public function response(): Response
     {
-        return ResponseFacade
-            ::make(
+        return ResponseFacade::make(
             $this->serialize(),
             200,
             $this->getAssociativeHeaders(),
