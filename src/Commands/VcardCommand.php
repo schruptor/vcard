@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Schruptor\Vcard\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class VcardCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'vcard';
 
     public $description = 'My command';
 
