@@ -44,6 +44,9 @@ class Vcard
         return $this;
     }
 
+    /**
+     * @return array<int, array<int, string>>
+     */
     public function toArray(): array
     {
         $this->validate();
@@ -51,6 +54,9 @@ class Vcard
         return $this->toArrayWithoutValidation();
     }
 
+    /**
+     * @return array<int, array<int, string>>
+     */
     public function toArrayWithoutValidation(): array
     {
         $this->endCard();
@@ -100,7 +106,7 @@ class Vcard
         }
     }
 
-    public function save($path): bool
+    public function save(string $path): bool
     {
         return (bool) file_put_contents($path, $this->serialize());
     }
@@ -114,6 +120,9 @@ class Vcard
         );
     }
 
+    /**
+     * @return array<string, int<0, max>|string>
+     */
     private function getAssociativeHeaders(): array
     {
         return [

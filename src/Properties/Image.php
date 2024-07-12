@@ -2,6 +2,7 @@
 
 namespace Schruptor\Vcard\Properties;
 
+use ImageNotParsableException;
 use Schruptor\Vcard\Properties\Base\PropertieContract;
 use Spatie\LaravelData\Attributes\Computed;
 use Spatie\LaravelData\Data;
@@ -19,9 +20,16 @@ class Image extends Data implements PropertieContract
         $this->class = $this::class;
     }
 
+    /**
+     * @throws ImageNotParsableException
+     */
     public static function fromPath(string $path): self
     {
-        $base64 = base64_encode(file_get_contents($path));
+        if (!($file = file_get_contents($path))) {
+            throw new ImageNotParsableException();
+        }
+
+        $base64 = base64_encode($file);
         $type = pathinfo($path, PATHINFO_EXTENSION);
 
         return new self($base64, $type);
