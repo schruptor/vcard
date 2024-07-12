@@ -2,9 +2,9 @@
 
 namespace Schruptor\Vcard\Properties;
 
-use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Attributes\Computed;
 use Schruptor\Vcard\Properties\Base\PropertieContract;
+use Spatie\LaravelData\Attributes\Computed;
+use Spatie\LaravelData\Data;
 
 class Mobile extends Data implements PropertieContract
 {

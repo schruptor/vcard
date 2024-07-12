@@ -25,7 +25,7 @@ class Image extends Data implements PropertieContract
      */
     public static function fromPath(string $path): self
     {
-        if (!($file = file_get_contents($path))) {
+        if (! ($file = file_get_contents($path))) {
             throw new ImageNotParsableException();
         }
 
