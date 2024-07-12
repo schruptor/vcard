@@ -2,9 +2,11 @@
 
 namespace Schruptor\Vcard\Properties;
 
+use Schruptor\Vcard\Properties\Base\PropertieContract;
 use Spatie\LaravelData\Attributes\Computed;
+use Spatie\LaravelData\Data;
 
-class Fax extends Phone
+class Fax extends Data implements PropertieContract
 {
     #[Computed]
     public string $class;
