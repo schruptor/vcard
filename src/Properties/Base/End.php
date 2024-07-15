@@ -25,4 +25,9 @@ class End extends Data implements PropertieContract
         return 'REV:'.$date.'T'.$time.'Z'.PHP_EOL.
             'END:VCARD';
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

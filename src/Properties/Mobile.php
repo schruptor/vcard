@@ -21,4 +21,9 @@ class Mobile extends Data implements PropertieContract
     {
         return "TEL;type=CELL;MOBILE:$this->number";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

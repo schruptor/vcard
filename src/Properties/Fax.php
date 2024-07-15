@@ -22,4 +22,9 @@ class Fax extends Data implements PropertieContract
     {
         return "TEL;type=FAX;$this->type:$this->number";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

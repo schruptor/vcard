@@ -21,4 +21,9 @@ class JobTitle extends Data implements PropertieContract
     {
         return "TITLE;CHARSET=UTF-8:$this->title";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }
