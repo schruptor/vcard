@@ -27,4 +27,9 @@ class Address extends Data implements PropertieContract
             "LABEL;$this->type;PREF;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:$this->street=0D=0A=".PHP_EOL.
             "$this->zip $this->city $this->country";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }
