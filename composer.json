@@ -36,8 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Schruptor\\Vcard\\": "src/",
-            "Schruptor\\Vcard\\Database\\Factories\\": "database/factories/"
+            "Schruptor\\Vcard\\": "src/"
         }
     },
     "autoload-dev": {
@@ -75,10 +74,7 @@
         "laravel": {
             "providers": [
                 "Schruptor\\Vcard\\VcardServiceProvider"
-            ],
-            "aliases": {
-                "Vcard": "Schruptor\\Vcard\\Facades\\Vcard"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
