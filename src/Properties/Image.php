@@ -39,4 +39,9 @@ class Image extends Data implements PropertieContract
     {
         return "PHOTO;ENCODING=b;TYPE=$this->type:$this->base64";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

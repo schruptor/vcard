@@ -19,4 +19,9 @@ class Begin extends Data implements PropertieContract
     {
         return 'BEGIN:VCARD'.PHP_EOL.'VERSION:3.0';
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

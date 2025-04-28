@@ -19,6 +19,9 @@ use Schruptor\Vcard\Properties\Source;
 
 class Vcard
 {
+    /**
+     * @var Collection<int, PropertieContract>
+     */
     private Collection $properties;
 
     public function __construct(
@@ -45,7 +48,7 @@ class Vcard
     }
 
     /**
-     * @return array<int, array<int, string>>
+     * @return array<int|string, mixed>
      */
     public function toArray(): array
     {
@@ -55,7 +58,7 @@ class Vcard
     }
 
     /**
-     * @return array<int, array<int, string>>
+     * @return array<int|string, mixed>
      */
     public function toArrayWithoutValidation(): array
     {
@@ -86,7 +89,7 @@ class Vcard
     public function validate(): void
     {
         $this->properties = $this->properties->unique(function (PropertieContract $item) {
-            return match ($item->class) {
+            return match ($item->getClass()) {
                 Name::class => Name::class,
                 JobTitle::class => JobTitle::class,
                 Image::class => Image::class,
