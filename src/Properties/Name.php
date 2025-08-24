@@ -24,4 +24,9 @@ class Name extends Data implements PropertieContract
     {
         return "N;CHARSET=UTF-8:$this->lastName;$this->firstName;;$this->title;$this->nickname";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

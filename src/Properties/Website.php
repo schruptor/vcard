@@ -22,4 +22,9 @@ class Website extends Data implements PropertieContract
     {
         return "URL;$this->type:$this->url";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

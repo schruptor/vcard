@@ -21,4 +21,9 @@ class Birthday extends Data implements PropertieContract
     {
         return "BDAY:$this->date";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }
