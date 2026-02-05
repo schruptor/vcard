@@ -22,4 +22,9 @@ class Phone extends Data implements PropertieContract
     {
         return "TEL;type=$this->type;VOICE:$this->number";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

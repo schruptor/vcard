@@ -21,4 +21,9 @@ class Note extends Data implements PropertieContract
     {
         return "NOTE;CHARSET=utf-8:$this->note";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

@@ -21,4 +21,9 @@ class Source extends Data implements PropertieContract
     {
         return "SOURCE:$this->url";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

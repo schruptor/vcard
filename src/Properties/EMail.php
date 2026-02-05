@@ -24,4 +24,9 @@ class EMail extends Data implements PropertieContract
 
         return "EMAIL;type=$this->type$seperator$this->email";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }

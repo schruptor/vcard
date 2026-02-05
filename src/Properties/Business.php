@@ -22,4 +22,9 @@ class Business extends Data implements PropertieContract
     {
         return "ORG;CHARSET=UTF-8:$this->name;$this->unit";
     }
+
+    public function getClass(): string
+    {
+        return $this->class;
+    }
 }
